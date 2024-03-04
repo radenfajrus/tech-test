@@ -118,11 +118,16 @@ Petunjuk Penggunaan:
  ```
   cd 3-automated-testing
 
-  pip3 install virtualenv
-  virtualenv -p python3 .venv 
-  source .venv/bin/activate
+  python -m pip install virtualenv
+  python -m venv .venv 
 
-  pip3 install -r requirement.txt
+  # for windows
+  source .venv/Scripts/activate
+
+  # for linux
+  # source .venv/bin/activate
+
+  pip install -r requirement.txt
   
   python -m unittest discover
 
