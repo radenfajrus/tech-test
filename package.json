@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "frontend": "nodemon index.ts",
+    "backend": "nodemon index.ts",
+    "testing": "nodemon index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}

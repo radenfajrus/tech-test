@@ -1,0 +1,13 @@
+{
+  "name": "1-frontend",
+  "private": true,
+  "scripts": {
+    "build": "node-sass index.scss -o assets/css/ ",
+    "watch": "node-sass -w index.scss -o assets/css/ ",
+    "dev": "http-server -p 8080",
+    "prod": "http-server -p 8080"
+  },
+  "devDependencies": {
+    "node-sass": "^9.0.0"
+  }
+}

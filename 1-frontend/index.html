@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>1. Pengembangan Frontend</title>
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+
+  <script src="/assets/js/tailwind-3.4.1.js"></script>
+  <link rel="stylesheet" type="text/css" href="/assets/css/index.css">
+  <style>
+    .h-divider{
+      width: 95%;
+      height: 1px;
+      border: 1px solid var(--gray3);
+      display: flex;
+      align-self: center;
+    }
+    button:is(.loading),select:is(.loading),input:is(.loading) {
+      background-color: var(--gray3);
+      border-color: var(--gray3);
+      pointer-events: none;
+      user-select: none;
+    }
+    button:is(.loading):hover {
+      background-color: var(--gray3);
+      border-color: var(--gray3);
+      pointer-events: none;
+    }
+    input:is(.error) {
+      border-color: var(--color3);
+      box-shadow: 4px 4px 12px 12px color-mix(in srgb, var(--color3), transparent 80%);
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    #layout-wrapper{
+      width: min(calc(100% - 2rem), 69.375rem);
+    }
+    .form-input-text{
+      width: 100%;
+      height: 3em;
+      background-color: transparent;
+      color: var(--color1);
+      caret-color: var(--color1);
+      outline: 0;
+      border-width: 1px;
+      border-color: var(--color1);
+      font-size: 1.2rem;
+      padding: 0px 1em;
+      border-radius: 0.375rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="layout" class="flex justify-center h-full w-full relative">
+    <div id="layout-wrapper" class="flex justify-center h-full w-full">
+      <div id="container" class="flex flex-col lg:flex-row justify-center py-36 gap-4 lg:w-full md:w-[55%] w-full h-full ">
+        <div id="container-left" class="flex flex-col w-full px-8 gap-4">
+          <div class="text-4xl lg:text-left text-center font-bold">
+            Personal Information Form
+          </div>
+          <div class="text-xl lg:text-left text-center text-[var(--gray4)]">
+            The data you provide will be treated with the utmost confidentiality and will only be used for the purposes outlined in the form.
+            Please complete the following fields with accurate information
+          </div>
+        </div>
+        <div id="container-right" class="flex flex-col w-full lg:px-16 px-8 mt-4">
+          <div id="form-container" class="flex flex-col justify-center items-center w-full h-full gap-8 ">
+            <form action="" method="post" id="form" class="flex flex-col w-full gap-6">
+              <div id="form-input" class="flex flex-col gap-4">
+                <div class="flex flex-col gap-2">
+                  <div class="flex flex-row justify-between align-bottom">
+                    <label>Name</label>
+                    <span id="form-error-name" class="text-red-700"></span>
+                  </div>
+                  <input id="form-input-name" autocomplete="one-time-code" tabindex="-1" class="form-input-text" type="text" name="name" placeholder="Name">
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex flex-row justify-between align-bottom">
+                    <label>Email</label>
+                    <span id="form-error-email" class="text-red-500 text-sm"></span>
+                  </div>
+                  <input id="form-input-email" autocomplete="one-time-code" tabindex="-1" class="form-input-text" type="text" name="email" placeholder="Email">
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex flex-row justify-between align-bottom">
+                    <label>Phone</label>
+                    <span id="form-error-phone" class="text-red-700"></span>
+                  </div>
+                  <div class="flex flex-row">
+                    <div id="form-select" class="flex flex-col">
+                      <select id="form-input-phone-area" tabindex="-1" name="phone_area" placeholder="Phone Area" 
+                        class="form-input-text !rounded-r-[0] text-end pl-2">
+                        <option class="text" value="+62" selected="selected">+62</option>
+                      </select>
+                    </div>
+                    <div class="flex flex-col grow">
+                      <input id="form-input-phone-number" autocomplete="one-time-code" tabindex="-1" class="form-input-text !rounded-l-[0]" type="text" name="phone_number" placeholder="Phone Number">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="h-divider"></div>
+              <div class="flex flex-col">
+                <button id="form-submit"  tabindex="-1" class="w-full border rounded-md py-4 uppercase active:bg-[var(--color3)] hover:bg-[var(--color3)] transition-all delay-400" type="submit">Submit</button>
+              </div>
+            </form>
+            <div class="flex justify-center text-xl">
+              <button onclick="toggleModal()" class="cursor-pointer select-none text-[var(--color3)] hover:text-[var(--color1)]">Check Data Here</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="fixed overflow-y-auto top-0 left-0 z-10 w-full h-full flex items-center justify-center hidden" id="modal">
+      <div class="flex flex-col items-center justify-center lg:w-[40%] md:w-[55%] w-[80%] h-[50vh] text-center relative ">
+        <div class="flex flex-col overflow-hidden bg-white rounded-lg w-full h-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+          <div id="data-display" class="flex flex-col grow overflow-y-auto">
+            
+          </div>
+          <div class="bg-gray-200 text-right bottom-0 right-0 w-full py-4 px-4">
+            <button type="button" class="py-2 px-4 bg-[var(--color1-reverse)] text-white rounded hover:bg-gray-700 mr-2" onclick="toggleModal()">Cancel</button>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script lang="js">
+  let formRef = {
+    form: HTMLElement,
+    errorName: HTMLElement,
+    errorEmail: HTMLElement,
+    errorPhone: HTMLElement,
+    inputEmail: HTMLElement,
+    inputName: HTMLElement,
+    inputPhoneArea: HTMLElement,
+    inputPhoneNumber: HTMLElement,
+    buttonSubmit: HTMLElement,
+  }
+  let cleanError = ()=>{
+    formRef.errorName.style.visibility = "hidden";
+    formRef.errorEmail.style.visibility = "hidden";
+    formRef.errorPhone.style.visibility = "hidden";
+    formRef.inputEmail.classList.remove("error")
+    formRef.inputName.classList.remove("error")
+    formRef.inputPhoneArea.classList.remove("error")
+    formRef.inputPhoneNumber.classList.remove("error")
+  }
+  let cleanInput = ()=>{
+    formRef.inputEmail.value = ""
+    formRef.inputName.value = ""
+    formRef.inputPhoneNumber.value = ""
+  }
+  let setLoading = (val) => {
+      if(val){
+        cleanError();
+        formRef.inputName.classList.add("loading")
+        formRef.inputEmail.classList.add("loading")
+        formRef.inputPhoneArea.classList.add("loading")
+        formRef.inputPhoneNumber.classList.add("loading")
+        formRef.buttonSubmit.classList.add("loading")
+      }else{
+        formRef.inputName.classList.remove("loading")
+        formRef.inputEmail.classList.remove("loading")
+        formRef.inputPhoneArea.classList.remove("loading")
+        formRef.inputPhoneNumber.classList.remove("loading")
+        formRef.buttonSubmit.classList.remove("loading")
+      }
+    }
+  let errorHandler = {
+    ErrorNameLength : () => {
+      cleanError();
+      formRef.errorName.innerText = "Name should be less than 30 character !"
+      formRef.errorName.style.visibility = "visible"
+      formRef.inputName.classList.add("error")
+    },
+    ErrorEmailLength : () => {
+      cleanError();
+      formRef.errorEmail.innerText = "Email should be less than 30 character !"
+      formRef.errorEmail.style.visibility = "visible"
+      formRef.inputEmail.classList.add("error")
+    },
+
+    ErrorNameSpecialCharacter : () => {
+      cleanError();
+      formRef.inputName.innerText = "Name should not contain special character"
+      formRef.inputName.style.visibility = "visible"
+      formRef.inputName.classList.add("error")
+    },
+    ErrorEmailFormatMail : () => {
+      cleanError();
+      formRef.errorEmail.innerText = "Wrong email format !"
+      formRef.errorEmail.style.visibility = "visible"
+      formRef.inputEmail.classList.add("error")
+    },
+
+    ErrorPhoneAreaNotExist : () => {
+      cleanError();
+      formRef.errorPhone.innerText = "Please select phone area first !"
+      formRef.errorPhone.style.visibility = "visible"
+      formRef.inputPhoneArea.classList.add("error")
+      
+    },
+    ErrorPhoneNumberFormat : () => {
+      cleanError();
+      formRef.errorPhone.innerText = "Phone should be in number format !"
+      formRef.errorPhone.style.visibility = "visible";
+      formRef.inputPhoneNumber.classList.add("error")
+    },
+    ErrorPhoneNumberLength : () => {
+      cleanError();
+      formRef.errorPhone.innerText = "Phone should be less than 15 character !"
+      formRef.errorPhone.style.visibility = "visible";
+      formRef.inputPhoneNumber.classList.add("error")
+    },
+
+    ErrorNameEmpty : () => {
+      cleanError();
+      formRef.errorName.innerText = "Name should not empty !"
+      formRef.errorName.style.visibility = "visible";
+      formRef.inputName.classList.add("error")
+      
+    },
+    ErrorEmailEmpty : () => {
+      cleanError();
+      formRef.errorEmail.innerText = "Email should not empty !"
+      formRef.errorEmail.style.visibility = "visible";
+      formRef.inputEmail.classList.add("error")
+    },
+    ErrorPhoneAreaEmpty : () => {
+      cleanError();
+      formRef.errorPhone.innerText = "Please select phone area first !"
+      formRef.errorPhone.style.visibility = "visible"
+      formRef.inputPhoneArea.classList.add("error")
+    },
+    ErrorPhoneNumberEmpty : () => {
+      cleanError();
+      formRef.errorPhone.innerText = "Phone number should not empty !"
+      formRef.errorPhone.style.visibility = "visible"
+      formRef.inputPhoneNumber.classList.add("error")
+    },
+  }
+  let formValidation = {
+    checkValidEmailFormat : (value) => {
+      let pattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,12}$/i
+      return value.trim().match(pattern) != null
+    },
+    checkIsNotEmpty : (value) => {
+      return value.trim() !=null && value.trim() != ""
+    },
+    checkIsNumber : (value) => {
+      let pattern = /^\d+$/i
+      return value.trim().match(pattern) != null
+      
+    },
+
+    checkValidPhoneLength : (value) => {
+      return value!="" && value.length <= 15
+    },
+    checkValidTextLength : (value) => {
+      return value!="" && value.length <= 30
+    },
+  }
+  let validateForm = () =>{
+    if(!formValidation.checkIsNotEmpty(formRef.inputName.value)) {
+      errorHandler.ErrorNameEmpty()
+      return false
+    }
+    if(!formValidation.checkValidTextLength(formRef.inputName.value)) {
+      errorHandler.ErrorNameLength()
+      return false
+    }
+
+    if(!formValidation.checkIsNotEmpty(formRef.inputEmail.value)) {
+      errorHandler.ErrorEmailEmpty()
+      return false
+    }
+    if(!formValidation.checkValidEmailFormat(formRef.inputEmail.value)) {
+      errorHandler.ErrorEmailFormatMail()
+      return false
+    }
+    if(!formValidation.checkValidTextLength(formRef.inputEmail.value)) {
+      errorHandler.ErrorEmailLength()
+      return false
+    }
+
+    if(!formValidation.checkIsNotEmpty(formRef.inputPhoneArea.value)) {
+      errorHandler.ErrorPhoneAreaEmpty()
+      return false
+    }
+    if(!formValidation.checkIsNotEmpty(formRef.inputPhoneNumber.value)) {
+      errorHandler.ErrorPhoneNumberEmpty()
+      return false
+    }
+
+    if(!formValidation.checkIsNumber(formRef.inputPhoneNumber.value)) {
+      errorHandler.ErrorPhoneNumberFormat()
+      return false
+    }
+    
+    if(!formValidation.checkValidPhoneLength(formRef.inputPhoneNumber.value)) {
+      errorHandler.ErrorPhoneNumberLength()
+      return false
+    }
+
+    return true
+  }
+
+  let toggleModal = () => { 
+    document.getElementById('data-display').innerHTML=""
+    fetch('http://localhost:5000/api/forms',{
+      method: "GET"
+    }).then( async (res) =>{
+      if(res.status==200){
+        let res_json = await res.json()
+        let contents = res_json.map(d=>{
+          let str = `
+            <div class="flex flex-col text-black px-4 py-2 text-left">
+              <div>ID:${d.id}</div>
+              <div>Name:${d.name}</div>
+              <div>Email:${d.email}</div>
+              <div>Phone:${d.phone_area}${d.phone_number}</div>
+            </div>
+            <div class="h-divider border-black"></div>
+          `
+          return str 
+        })
+        document.getElementById('data-display').innerHTML= contents.join("")
+      }
+    }).finally(()=>{
+      document.getElementById('modal').classList.toggle('hidden') 
+    })
+  }
+
+  window.onload = async () => {
+    // Set UI Binding
+    formRef.form = document.getElementById("form");
+    formRef.errorName  = document.getElementById("form-error-name");
+    formRef.errorEmail = document.getElementById("form-error-email");
+    formRef.errorPhone = document.getElementById("form-error-phone");
+    formRef.inputName  = document.getElementById("form-input-name");
+    formRef.inputEmail = document.getElementById("form-input-email");
+    formRef.inputPhoneArea   = document.getElementById("form-input-phone-area");
+    formRef.inputPhoneNumber = document.getElementById("form-input-phone-number");
+    formRef.buttonSubmit = document.getElementById("form-submit");
+
+
+    // Set UI Input Listener
+    formRef.inputName.addEventListener("input",(e)=>{
+      e.target.value = e.target.value.trim()
+      formRef.inputName.classList.remove("error")
+    })
+    formRef.inputEmail.addEventListener("input",(e)=>{
+      e.target.value = e.target.value.replace(/ /g, '')
+      formRef.inputEmail.classList.remove("error")
+    })
+    formRef.inputPhoneArea.addEventListener("select",(e)=>{
+      formRef.inputPhoneArea.classList.remove("error")
+    })
+    formRef.inputPhoneNumber.addEventListener("input",(e)=>{
+      e.target.value = e.target.value.replace(/ /g, '').replace(/\D/g, '')
+      if(e.target.value.length>1) {
+        e.target.value = e.target.value.replace(/^0/g, '')
+      }
+      formRef.inputPhoneNumber.classList.remove("error")
+    })
+
+    // Set UI Action
+    let delay = (d) => new Promise(resolve => setTimeout(resolve, d))
+
+    // Set UI Action Listener
+    formRef.form.addEventListener("submit",async (e)=>{
+      e.preventDefault()
+    })
+    formRef.buttonSubmit.addEventListener("click",async (e)=>{
+      e.preventDefault()
+      
+      try{
+        setLoading(true)
+
+        await delay(200)
+        if(!validateForm()) return setLoading(false)
+
+
+          let formData = new URLSearchParams()
+          formData.append("name", formRef.inputName.value)
+          formData.append("email", formRef.inputEmail.value)
+          formData.append("phone_area", formRef.inputPhoneArea.value)
+          formData.append("phone_number", formRef.inputPhoneNumber.value)
+
+          fetch("http://localhost:5000/api/forms",{
+            body: formData,
+            method: "POST",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+              "Accept": "*/*"
+            }
+          }).then(async (res)=>{
+
+            if(res.status==200){
+              alert("Form has been submitted")
+              cleanInput()
+            }
+            if(res.status==422){
+              let res_json = await res.json()
+            console.log(res_json)
+              alert('<pre>' + 
+                res_json.message + '\n\n' + 
+                JSON.stringify(res_json.detail, null, 2) + 
+                '</pre>'
+              )
+            }
+            if(res.status==500){
+              let res_json = await res.json()
+              alert(res_json.message)
+            }
+
+          }).catch((err)=>{
+            alert("Cannot access http://localhost:5000. api is unavailable")
+          }).finally(()=>{
+            setLoading(false)
+          })
+
+      }catch(error){
+        console.log(error)
+        setLoading(false)
+      }
+    })
+  }
+
+</script>
+</html>
+
+
