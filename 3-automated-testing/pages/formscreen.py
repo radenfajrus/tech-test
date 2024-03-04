@@ -7,31 +7,19 @@ from selenium.webdriver.support import expected_conditions as EC
 from config import base_url
 
 from functools import wraps
+import logging
 
 class FormScreen:
   def __init__(self,driver):
     self.driver = driver
+    wait = WebDriverWait(self.driver, 10)
 
-    self.nameField = WebDriverWait(self.driver, 3) \
-      .until(EC.visibility_of_element_located((By.ID, "form-input-name")))  
-    self.emailField = WebDriverWait(self.driver, 3) \
-      .until(EC.visibility_of_element_located((By.ID, "form-input-email")))  
-    self.phoneField = WebDriverWait(self.driver, 3) \
-      .until(EC.visibility_of_element_located((By.ID, "form-input-phone-number")))  
+    self.nameField = wait.until(EC.visibility_of_element_located((By.ID, "form-input-name")))  
+    self.emailField = wait.until(EC.visibility_of_element_located((By.ID, "form-input-email")))  
+    self.phoneField = wait.until(EC.visibility_of_element_located((By.ID, "form-input-phone-number")))
+    
+    self.submitButton = wait.until(EC.visibility_of_element_located((By.ID, "form-submit")))  
 
-    self.nameErrorText = WebDriverWait(self.driver, 3) \
-      .until(EC.visibility_of_element_located((By.ID, "form-error-name")))  
-    self.emailErrorText = WebDriverWait(self.driver, 3) \
-      .until(EC.visibility_of_element_located((By.ID, "form-error-email")))  
-    self.phoneErrorText = WebDriverWait(self.driver, 3) \
-      .until(EC.visibility_of_element_located((By.ID, "form-error-phone-number")))  
-    
-    self.submitButton = WebDriverWait(self.driver, 3) \
-      .until(EC.visibility_of_element_located((By.ID, "form-submit")))  
-    
-
-    self.displayedMessage = WebDriverWait(self.driver, 3).until(EC.visibility_of_element_located((By.CLASS_NAME, "et-pb-contact-message")))  
-    
   def clearField(func):
     def wrapper(self, *arg, **kw):
         self.nameField.clear()
@@ -44,21 +32,22 @@ class FormScreen:
 
   def getAlertSubmitSuccess(self):
     try:
-        WebDriverWait(self.driver.instance, 10) \
-          .until(EC.alert_is_present(),'Form has been submitted')
-        alert = self.driver.instance.switch_to.alert
-        alert.accept()
-        return True
+      alert = WebDriverWait(self.driver, 3).until(EC.alert_is_present())
+      alert_text = alert.text
+      alert.accept()
+      return alert_text == "Form has been submitted"
     except Exception as e:
-        return False
-        
+      return False
+          
   @clearField
   def validate_error_input_name_displayed(self):
     self.nameField.send_keys()
     self.emailField.send_keys("user@gmail.com")
     self.phoneField.send_keys("8123123123")
     self.submitButton.click()
-    assert self.nameErrorText.is_displayed() 
+    
+    self.nameErrorText = WebDriverWait(self.driver, 3).until(EC.visibility_of_element_located((By.ID, "form-error-name")))  
+    assert self.nameErrorText.is_displayed(), "error text on name field not displayed"
 
   @clearField
   def validate_error_input_email_displayed(self):
@@ -66,7 +55,9 @@ class FormScreen:
     self.emailField.send_keys()
     self.phoneField.send_keys("8123123123")
     self.submitButton.click()
-    assert self.emailErrorText.is_displayed() 
+
+    self.emailErrorText = WebDriverWait(self.driver, 3).until(EC.visibility_of_element_located((By.ID, "form-error-email")))  
+    assert self.emailErrorText.is_displayed(), "error text on email field not displayed" 
 
   @clearField
   def validate_error_input_phone_displayed(self):
@@ -74,7 +65,9 @@ class FormScreen:
     self.emailField.send_keys("user@gmail.com")
     self.phoneField.send_keys()
     self.submitButton.click()
-    assert self.phoneErrorText.is_displayed() 
+
+    self.phoneErrorText = WebDriverWait(self.driver, 3).until(EC.visibility_of_element_located((By.ID, "form-error-phone")))  
+    assert self.phoneErrorText.is_displayed(), "error text on phone field not displayed" 
 
   @clearField
   def validate_message_submit_success_displayed(self):
@@ -82,7 +75,7 @@ class FormScreen:
     self.emailField.send_keys("user@gmail.com")
     self.phoneField.send_keys("8123123123")
     self.submitButton.click()
-    assert self.getAlertSubmitSuccess() 
+    assert self.getAlertSubmitSuccess(), "submit didnt get success response from server" 
 
       
     
