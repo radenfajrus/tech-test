@@ -20,7 +20,7 @@ npm run dev
 ```
 
 ## Pemakaian Aplikasi
-1. Frontend 
+### 1. Frontend 
 Frontend merupakan halaman website yang berfungsi melayani proses input form yang terdiri dari data nama, email, dan nomor telepon. 
    
 Teknologi:
@@ -62,7 +62,7 @@ Skema Pengujian:
     3. Klik tautan ***Check Data Here*** dibawah tombol submit 
 
 
-2. Backend 
+### 2. Backend 
 Backend berfungsi sebagai api server untuk menyimpan dan membaca data form dari Frontend.  
 Backend dibuat dengan menggunakan NodeJS dengan framework expressJS. 
 Data form disimpan dalam bentuk penyimpanan file.
@@ -100,7 +100,7 @@ Skema Pengujian:
   ```
 
 
-3. Automated Testing 
+### 3. Automated Testing 
 Testing dilakukan melalui skrip Selenium untuk melakukan pengujian Frontend secara otomatis.  
 Untuk itu perlu dipastikan bahwa frontend  
 
