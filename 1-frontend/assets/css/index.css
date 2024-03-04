@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+:root {
+  font-family: Roboto, Arial, sans-serif;
+  line-height: 1.3;
+  font-weight: 400;
+  font-size: 16px;
+  --color1: #fff;
+  --color1-reverse: #231f20;
+  --color2: #141414;
+  --color3: #fc2a32;
+  --gray1: #ffffff0f;
+  --gray2: #ffffff1f;
+  --gray3: #ffffff6f;
+  --gray4: #ffffffbf;
+  --color-dark: #fff;
+  --color-link: var(--color2);
+  --color-link-hover: var(--color2);
+  --color-link-active: var(--color2);
+  --color-btn-light: var(--color1);
+  --color-btn-light-hover: #fe2c550f;
+  --color-btn-light-active: #fe2c5529;
+  --text-btn-light: var(--color3);
+  --color-btn-dark: var(--color3);
+  --color-btn-dark-hover: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)),#FE2C55;
+  --color-btn-dark-active: linear-gradient(0deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12)),#FE2C55;
+  --text-btn-dark: var(--color1);
+  --color-btn-gray: var(--color1);
+  --color-btn-gray-hover: var(--gray1);
+  --color-btn-gray-active: var(--gray1);
+  --text_btn-gray: var(--color2);
+  color: var(--color1);
+  background-color: var(--color2); }

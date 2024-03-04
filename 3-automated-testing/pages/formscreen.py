@@ -12,25 +12,25 @@ class FormScreen:
   def __init__(self,driver):
     self.driver = driver
 
-    self.nameField = WebDriverWait(self.driver.instance, 10) \
+    self.nameField = WebDriverWait(self.driver, 3) \
       .until(EC.visibility_of_element_located((By.ID, "form-input-name")))  
-    self.emailField = WebDriverWait(self.driver.instance, 10) \
+    self.emailField = WebDriverWait(self.driver, 3) \
       .until(EC.visibility_of_element_located((By.ID, "form-input-email")))  
-    self.phoneField = WebDriverWait(self.driver.instance, 10) \
+    self.phoneField = WebDriverWait(self.driver, 3) \
       .until(EC.visibility_of_element_located((By.ID, "form-input-phone-number")))  
 
-    self.nameErrorText = WebDriverWait(self.driver.instance, 10) \
+    self.nameErrorText = WebDriverWait(self.driver, 3) \
       .until(EC.visibility_of_element_located((By.ID, "form-error-name")))  
-    self.emailErrorText = WebDriverWait(self.driver.instance, 10) \
+    self.emailErrorText = WebDriverWait(self.driver, 3) \
       .until(EC.visibility_of_element_located((By.ID, "form-error-email")))  
-    self.phoneErrorText = WebDriverWait(self.driver.instance, 10) \
+    self.phoneErrorText = WebDriverWait(self.driver, 3) \
       .until(EC.visibility_of_element_located((By.ID, "form-error-phone-number")))  
     
-    self.submitButton = WebDriverWait(self.driver.instance, 10) \
+    self.submitButton = WebDriverWait(self.driver, 3) \
       .until(EC.visibility_of_element_located((By.ID, "form-submit")))  
     
 
-    self.displayedMessage = WebDriverWait(self.driver.instance, 10).until(EC.visibility_of_element_located((By.CLASS_NAME, "et-pb-contact-message")))  
+    self.displayedMessage = WebDriverWait(self.driver, 3).until(EC.visibility_of_element_located((By.CLASS_NAME, "et-pb-contact-message")))  
     
   def clearField(func):
     def wrapper(self, *arg, **kw):
