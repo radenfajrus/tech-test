@@ -45,7 +45,6 @@ Skema Pengujian:
      
    Smartphone View:  
    <img src="https://github.com/radenfajrus/tech-test/assets/14508343/d1e57542-74dd-4922-92dc-ecefc2298d26" alt="Smartphone View" width="250" style="display: block; margin: 0 auto" />  
-   <span style="width: 40%;text-align: center">![image](https://github.com/radenfajrus/tech-test/assets/)</span>  
   
  2. Pengujian Validasi 
     Frontend melakukan validasi diawal sebelum data disubmit. Validasi yang gagal ditampilkan dengan warna berbeda untuk mempermudah user dalam memperbaiki data form.
@@ -60,11 +59,11 @@ Skema Pengujian:
     4. Input nama dan email tidak boleh melebihi 30 karakter
     5. Input nomor telepon tidak boleh melebihi 15 karakter
 
-   Contoh Error pada Validasi:  
-   <img src="https://github.com/radenfajrus/tech-test/assets/14508343/e1ddb1e2-b8e8-43c6-9675-4ee2c9b7a890" alt="Validasi Error" width="600" style="display: block; margin: 0 auto" />  
+    Contoh Error pada Validasi:
+    <img src="https://github.com/radenfajrus/tech-test/assets/14508343/e1ddb1e2-b8e8-43c6-9675-4ee2c9b7a890" alt="Validasi Error" width="600" style="display: block; margin: 0 auto" />  
+  
 
-
-  3. Pengujian submit
+  4. Pengujian submit
     Setelah melalui proses validasi data akan di submit ke Backend.  
     User akan diberi notifikasi jika proses submit berhasil.  
     Step:  
