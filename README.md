@@ -1,5 +1,3 @@
-![image](https://github.com/radenfajrus/tech-test/assets/14508343/dc041b90-4264-406d-a48c-c1c306f04d8e)
-
 
 # Tata Cara menjalankan aplikasi
 
@@ -39,13 +37,13 @@ Skema Pengujian:
     1. Buka Browser Dev Tools dengan "Ctrl + Shift + C", lalu tekan "Ctrl + Shift + M"
     2. Ubah lebar layar dari ukuran desktop hingga smartphone untuk melihat tampilan tiap device
 
-   Desktop View: 
-   ![image](https://github.com/radenfajrus/tech-test/assets/14508343/7d8fc290-10d3-458f-b983-288f49360ecd)
-   Tablet View: 
-   ![image](https://github.com/radenfajrus/tech-test/assets/14508343/f255c715-2a22-49f8-a1ba-5078ff5a3772)
-   Smartphone View: 
-   ![image](https://github.com/radenfajrus/tech-test/assets/14508343/d1e57542-74dd-4922-92dc-ecefc2298d26)
-
+   Desktop View:  
+   ![image](https://github.com/radenfajrus/tech-test/assets/14508343/7d8fc290-10d3-458f-b983-288f49360ecd)  
+   Tablet View:  
+   ![image](https://github.com/radenfajrus/tech-test/assets/14508343/f255c715-2a22-49f8-a1ba-5078ff5a3772)  
+   Smartphone View:  
+   ![image](https://github.com/radenfajrus/tech-test/assets/14508343/d1e57542-74dd-4922-92dc-ecefc2298d26)  
+  
  2. Pengujian Validasi 
     Frontend melakukan validasi diawal sebelum data disubmit. Validasi yang gagal ditampilkan dengan warna berbeda untuk mempermudah user dalam memperbaiki data form.
     Step:
