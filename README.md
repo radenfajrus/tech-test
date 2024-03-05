@@ -41,10 +41,10 @@ Skema Pengujian:
    <img src="https://github.com/radenfajrus/tech-test/assets/14508343/7d8fc290-10d3-458f-b983-288f49360ecd" alt="Desktop View" width="600" style="display: block; margin: 0 auto" />  
      
    Tablet View:  
-   <img src="https://github.com/radenfajrus/tech-test/assets/14508343/f255c715-2a22-49f8-a1ba-5078ff5a3772" alt="Tablet View" width="600" style="display: block; margin: 0 auto" />  
+   <img src="https://github.com/radenfajrus/tech-test/assets/14508343/f255c715-2a22-49f8-a1ba-5078ff5a3772" alt="Tablet View" width="400" style="display: block; margin: 0 auto" />  
      
    Smartphone View:  
-   <img src="https://github.com/radenfajrus/tech-test/assets/14508343/d1e57542-74dd-4922-92dc-ecefc2298d26" alt="Smartphone View" width="600" style="display: block; margin: 0 auto" />  
+   <img src="https://github.com/radenfajrus/tech-test/assets/14508343/d1e57542-74dd-4922-92dc-ecefc2298d26" alt="Smartphone View" width="250" style="display: block; margin: 0 auto" />  
    <span style="width: 40%;text-align: center">![image](https://github.com/radenfajrus/tech-test/assets/)</span>  
   
  2. Pengujian Validasi 
