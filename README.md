@@ -58,13 +58,12 @@ Skema Pengujian:
     5. Input nomor telepon tidak boleh melebihi 15 karakter
 
    Contoh Error pada Validasi:  
-   <span style="width: 40%;text-align: center">![image](https://github.com/radenfajrus/tech-test/assets/14508343/e1ddb1e2-b8e8-43c6-9675-4ee2c9b7a890)</span>  
+   <span style="width: 40%;text-align: center">![image](https://github.com/radenfajrus/tech-test/assets/14508343/e1ddb1e2-b8e8-43c6-9675-4ee2c9b7a890 =250x)</span>  
 
 
   3. Pengujian submit
     Setelah melalui proses validasi data akan di submit ke Backend.  
-    User akan diberi notifikasi jika proses submit berhasil. 
-    
+    User akan diberi notifikasi jika proses submit berhasil.  
     Step:  
     1. Isi data form  
     2. Tekan tombol Submit  
