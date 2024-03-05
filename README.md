@@ -38,7 +38,7 @@ Skema Pengujian:
     2. Ubah lebar layar dari ukuran desktop hingga smartphone untuk melihat tampilan tiap device
 
    Desktop View:  
-   <span style="width: 40%;text-align: center">![image](https://github.com/radenfajrus/tech-test/assets/14508343/7d8fc290-10d3-458f-b983-288f49360ecd =250x)</span>  
+   <span style="width: 40%;text-align: center">![image](https://github.com/radenfajrus/tech-test/assets/14508343/7d8fc290-10d3-458f-b983-288f49360ecd){ width=250 style="display: block; margin: 0 auto" }</span>  
    Tablet View:  
    <span style="width: 40%;text-align: center">![image](https://github.com/radenfajrus/tech-test/assets/14508343/f255c715-2a22-49f8-a1ba-5078ff5a3772)</span>  
    Smartphone View:  
