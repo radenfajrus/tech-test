@@ -38,11 +38,11 @@ Skema Pengujian:
     2. Ubah lebar layar dari ukuran desktop hingga smartphone untuk melihat tampilan tiap device
 
    Desktop View:  
-   ![image](https://github.com/radenfajrus/tech-test/assets/14508343/7d8fc290-10d3-458f-b983-288f49360ecd)  
+   <span style="width: 40%;text-align: center">![image](https://github.com/radenfajrus/tech-test/assets/14508343/7d8fc290-10d3-458f-b983-288f49360ecd)</span>  
    Tablet View:  
-   ![image](https://github.com/radenfajrus/tech-test/assets/14508343/f255c715-2a22-49f8-a1ba-5078ff5a3772)  
+   <span style="width: 40%;text-align: center">![image](https://github.com/radenfajrus/tech-test/assets/14508343/f255c715-2a22-49f8-a1ba-5078ff5a3772)</span>  
    Smartphone View:  
-   ![image](https://github.com/radenfajrus/tech-test/assets/14508343/d1e57542-74dd-4922-92dc-ecefc2298d26)  
+   <span style="width: 40%;text-align: center">![image](https://github.com/radenfajrus/tech-test/assets/14508343/d1e57542-74dd-4922-92dc-ecefc2298d26)</span>  
   
  2. Pengujian Validasi 
     Frontend melakukan validasi diawal sebelum data disubmit. Validasi yang gagal ditampilkan dengan warna berbeda untuk mempermudah user dalam memperbaiki data form.
@@ -57,21 +57,21 @@ Skema Pengujian:
     4. Input nama dan email tidak boleh melebihi 30 karakter
     5. Input nomor telepon tidak boleh melebihi 15 karakter
 
-   Contoh Error pada Validasi:
-   ![image](https://github.com/radenfajrus/tech-test/assets/14508343/e1ddb1e2-b8e8-43c6-9675-4ee2c9b7a890)
+   Contoh Error pada Validasi:  
+   <span style="width: 40%;text-align: center">![image](https://github.com/radenfajrus/tech-test/assets/14508343/e1ddb1e2-b8e8-43c6-9675-4ee2c9b7a890)</span>  
 
 
   3. Pengujian submit
     Setelah melalui proses validasi data akan di submit ke Backend.  
     User akan diberi notifikasi jika proses submit berhasil. 
     
-    Step:
-    1. Isi data form
-    2. Tekan tombol Submit
-    3. Klik tautan ***Check Data Here*** dibawah tombol submit 
-
-    Contoh Data hasil Submit:
-    ![image](https://github.com/radenfajrus/tech-test/assets/14508343/5fe90944-268e-405f-9ab1-8283392053ba)
+    Step:  
+    1. Isi data form  
+    2. Tekan tombol Submit  
+    3. Klik tautan ***Check Data Here*** dibawah tombol submit  
+  
+    Contoh Data hasil Submit:  
+    <span style="width: 40%;text-align: center">![image](https://github.com/radenfajrus/tech-test/assets/14508343/5fe90944-268e-405f-9ab1-8283392053ba)</span>  
 
 
 
