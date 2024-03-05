@@ -38,13 +38,14 @@ Skema Pengujian:
     2. Ubah lebar layar dari ukuran desktop hingga smartphone untuk melihat tampilan tiap device
 
    Desktop View:  
-   <img src="https://github.com/radenfajrus/tech-test/assets/14508343/7d8fc290-10d3-458f-b983-288f49360ecd" alt="Desktop View" width="800" height="600" style="display: block; margin: 0 auto" />  
+   <img src="https://github.com/radenfajrus/tech-test/assets/14508343/7d8fc290-10d3-458f-b983-288f49360ecd" alt="Desktop View" width="600" style="display: block; margin: 0 auto" />  
      
    Tablet View:  
-   <span style="width: 40%;text-align: center">![image](https://github.com/radenfajrus/tech-test/assets/14508343/f255c715-2a22-49f8-a1ba-5078ff5a3772)</span>  
+   <img src="https://github.com/radenfajrus/tech-test/assets/14508343/f255c715-2a22-49f8-a1ba-5078ff5a3772" alt="Tablet View" width="600" style="display: block; margin: 0 auto" />  
      
    Smartphone View:  
-   <span style="width: 40%;text-align: center">![image](https://github.com/radenfajrus/tech-test/assets/14508343/d1e57542-74dd-4922-92dc-ecefc2298d26)</span>  
+   <img src="https://github.com/radenfajrus/tech-test/assets/14508343/d1e57542-74dd-4922-92dc-ecefc2298d26" alt="Smartphone View" width="600" style="display: block; margin: 0 auto" />  
+   <span style="width: 40%;text-align: center">![image](https://github.com/radenfajrus/tech-test/assets/)</span>  
   
  2. Pengujian Validasi 
     Frontend melakukan validasi diawal sebelum data disubmit. Validasi yang gagal ditampilkan dengan warna berbeda untuk mempermudah user dalam memperbaiki data form.
@@ -60,7 +61,7 @@ Skema Pengujian:
     5. Input nomor telepon tidak boleh melebihi 15 karakter
 
    Contoh Error pada Validasi:  
-   <span style="width: 40%;text-align: center">![image](https://github.com/radenfajrus/tech-test/assets/14508343/e1ddb1e2-b8e8-43c6-9675-4ee2c9b7a890 =250x)</span>  
+   <img src="https://github.com/radenfajrus/tech-test/assets/14508343/e1ddb1e2-b8e8-43c6-9675-4ee2c9b7a890" alt="Validasi Error" width="600" style="display: block; margin: 0 auto" />  
 
 
   3. Pengujian submit
@@ -72,8 +73,8 @@ Skema Pengujian:
     3. Klik tautan ***Check Data Here*** dibawah tombol submit  
   
     Contoh Data hasil Submit:  
-    <span style="width: 40%;text-align: center">![image](https://github.com/radenfajrus/tech-test/assets/14508343/5fe90944-268e-405f-9ab1-8283392053ba)</span>  
-
+    <img src="https://github.com/radenfajrus/tech-test/assets/14508343/5fe90944-268e-405f-9ab1-8283392053ba" alt="Data Hasil Submit" width="600" style="display: block; margin: 0 auto" />  
+  
 
 
 ### 2. Backend 
