@@ -60,7 +60,7 @@ Skema Pengujian:
     5. Input nomor telepon tidak boleh melebihi 15 karakter
 
     Contoh Error pada Validasi:  
-    <img src="https://github.com/radenfajrus/tech-test/assets/14508343/e1ddb1e2-b8e8-43c6-9675-4ee2c9b7a890" alt="Validasi Error" width="600" style="display: block; margin: 0 auto" />  
+    <img src="https://github.com/radenfajrus/tech-test/assets/14508343/e1ddb1e2-b8e8-43c6-9675-4ee2c9b7a890" alt="Validasi Error" width="400" style="display: block; margin: 0 auto" />  
   
 
   4. Pengujian submit
@@ -69,12 +69,9 @@ Skema Pengujian:
     Step:  
     1. Isi data form  
     2. Tekan tombol Submit  
-    3. Klik tautan ***Check Data Here*** dibawah tombol submit  
-
+    3. Klik tautan "Check Data Here" dibawah tombol submit  
     Contoh Data hasil Submit:  
-    <img src="https://github.com/radenfajrus/tech-test/assets/14508343/5fe90944-268e-405f-9ab1-8283392053ba" alt="Data Hasil Submit" width="600" style="display: block; margin: 0 auto" />  
-
-
+    <img src="https://github.com/radenfajrus/tech-test/assets/14508343/5fe90944-268e-405f-9ab1-8283392053ba" alt="Data Hasil Submit" width="400" style="display: block; margin: 0 auto" />  
 
 ### 2. Backend 
 Backend berfungsi sebagai api server untuk menyimpan dan membaca data form dari Frontend.  
